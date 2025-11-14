@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic light</title>
+    <style>
+        body{
+            display: flex;
+            background-color: skyblue;
+            margin-top: 50px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        .signals{
+            height: 600px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 40px;
+            background-color: black;
+        }
+    
+        .item{
+            background-color: rgb(26, 26, 26);
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        .btns{
+            display: flex;
+            flex-direction: column;
+            float: right;
+            margin: auto;
+        }
+        #red,#yellow,#green,#off{
+            height: 100px;
+            width: 200px;
+            margin: 20px;
+            border: none;
+            box-shadow: 8px 5px 2px black;
+            border-radius: 10px;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+        #red,#yellow,#green,#off:hover{
+            cursor: pointer;
+        }
+        #red:active{
+            /* background-color: rgb(107, 0, 0); */
+            background-color: grey;
+            box-shadow: none;
+        }
+        #yellow:active{
+            /* background-color: rgb(116, 116, 0); */
+            background-color: grey;
+            box-shadow: none;
+        }
+        #green:active{
+            /* background-color: rgb(1, 63, 1); */
+            background-color: grey;
+            box-shadow: none;
+        }
+        #off:active{
+            background-color: grey;
+        }
+        #red{
+            /* background-color: red; */
+             background-color: lightgray;
+        }
+        #yellow{
+            /* background-color: yellow; */
+             background-color: lightgray;
+        }
+        #green{
+            /* background-color: green; */
+             background-color: lightgray;
+        }
+        #off{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signals">
+        <div class="item" id="r"></div>
+        <div class="item" id="y"></div>
+        <div class="item" id="g"></div>
+    </div>
+    
+    <div class="btns">
+        <button id="red" onclick="stop()">STOP</button>
+        <button id="yellow" onclick="wait()">WAIT</button>
+        <button id="green" onclick="go()">GO!</button>
+         <button id="off" onclick="off()">OFF</button>
+    </div>
+    <script>
+        // const bt1 = document.getElementById("red")
+        // bt1 = style.backgroundColor="rgb(26, 26, 26)"
+        // const bt2 = document.getElementById("yellow")
+        // const bt3 = document.getElementById("green")
+        const round1 = document.getElementById("r")
+        const round2 = document.getElementById("y")
+        const round3 = document.getElementById("g")
+        
+        function stop(){
+            round1.style.backgroundColor = "red"
+            round2.style.backgroundColor = "rgb(26, 26, 26)"
+            round3.style.backgroundColor = "rgb(26, 26, 26)"
+            
+        }
+        function wait(){
+            round1.style.backgroundColor = "rgb(26, 26, 26)"
+            round2.style.backgroundColor = "yellow"
+            round3.style.backgroundColor = "rgb(26, 26, 26)"
+            
+        }
+        function go(){
+            round1.style.backgroundColor = "rgb(26, 26, 26)"
+            round2.style.backgroundColor = "rgb(26, 26, 26)"
+            round3.style.backgroundColor = "green"
+            
+        }
+        function off(){
+            round1.style.backgroundColor = "rgb(179, 52, 6, 0.6)"
+            round2.style.backgroundColor = "rgb(179, 52, 6, 0.6)"
+            round3.style.backgroundColor = "rgb(179, 52, 6, 0.6)"
+        }
+
+    </script>
+</body>
+
+</html>
